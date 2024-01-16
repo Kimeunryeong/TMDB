@@ -17,7 +17,7 @@ export default function NavPage() {
                 {/* 메뉴영역 */}
                 <div className="h-full flex items-center text-white font-bold space-x-6">
                     <Link to="/banana"><p>Movies</p></Link>
-                    <Link to="/grape"><p>TV Shows</p></Link>
+                    <Link to="/Tvdetail"><p>TV Shows</p></Link>
                     <p>People</p>
                     <p>more</p>
                 </div>

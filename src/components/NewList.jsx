@@ -1,6 +1,7 @@
 import React from "react";
 
 export default function NewList() {
+  // const []
   return (
     <div className="w-full flex justify-center flex-col items-center bg-slate-300 ">
       <div className=" w-[1300px] flex pt-6 bg-slate-50">
