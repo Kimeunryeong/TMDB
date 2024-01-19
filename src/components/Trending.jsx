@@ -33,7 +33,7 @@ export default function Trending() {
       .then((res) => res.json())
       .then((json) => {
         setLists(json?.results);
-        console.log(json)
+        console.log(json);
       })
       .catch((err) => console.error("error:" + err));
     // fetch 요청이 끝이나면 isLoading 값을 false
@@ -71,29 +71,37 @@ export default function Trending() {
           </div>
         </div>
         {/* 리스트 */}
-        {isLoading ? <div className="flex justify-center"><ClipLoader/></div> :
-        <div className="flex justify-center w-full bg-[url('./assets/back.png')] h-full">
-          {firstFiveItems.map((item) => (
-            <Link to={`/detail/${item.id}`} key={item.id}>
-              <div className="flex m-2 w-[165px]">
-                <div className="flex flex-col h-full space-y-4">
-                  <img
-                    className="rounded-2xl"
-                    src={`https://image.tmdb.org/t/p/w150_and_h225_face${item.poster_path}`}
-                    alt=""
-                  />
-                  {item.poster}
-                  <div className="w-[165px] mt-2 relative">
-                    <div className="font-bold">{item.title || item.name}</div>
-                    <div>{item.release_date || item.first_air_date}</div>
-                    <div className="absolute -top-10"><CircularProgress/></div>
+        {isLoading ? (
+          <div className="flex justify-center">
+            <ClipLoader />
+          </div>
+        ) : (
+          <div className="flex justify-center w-full bg-[url('./assets/back.png')] h-full">
+            {firstFiveItems.map((item) => (
+              <Link to={`/detail/${item.id}`} key={item.id}>
+                <div className="flex m-2 w-[165px]">
+                  <div className="flex flex-col h-full space-y-4">
+                    <img
+                      className="rounded-2xl"
+                      src={`https://image.tmdb.org/t/p/w150_and_h225_face${item.poster_path}`}
+                      alt=""
+                    />
+                    {item.poster}
+                    <div className="w-[165px] mt-2 relative">
+                      <div className="font-bold">{item.title || item.name}</div>
+                      <div>{item.release_date || item.first_air_date}</div>
+                      <div className="absolute -top-10">
+                        <CircularProgress
+                          rate={Math.floor(item?.vote_average * 10)}
+                        />
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </Link>
-          ))}
-        </div>
-        }
+              </Link>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );

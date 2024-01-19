@@ -22,7 +22,7 @@ export default function Detail() {
       .then((res) => res.json())
       .then((json) => {
         console.log(json);
-        setData(json?json:null);
+        setData(json ? json : null);
       })
       .catch((err) => console.error("error:" + err));
   }, [id]);
@@ -56,11 +56,15 @@ export default function Detail() {
               <div className="flex space-x-2">
                 <h1 className="font-bold text-3xl">{data?.title}</h1>
                 <h2 className="text-2xl">
-                  {/* ({data?.release_date?.split("-")[0]}) */}
+                  ({data?.release_date?.split("-")[0]})
                 </h2>
               </div>
               {/* 장르 러닝타임 */}
               <div className="flex space-x-2">
+                {/* favorite */}
+                <div>
+                  <CircularProgress rate={Math.floor(data?.vote_average * 10)} />
+                </div>
                 {/* 개봉일 */}
                 <span>{data?.release_date?.replaceAll("-", "/")}</span>
                 {/* 구분자 */}
@@ -71,15 +75,14 @@ export default function Detail() {
                     <span key={genre?.name}>{genre?.name}</span>
                   ))}
                 </span>
+
                 {/* 구분자 */}
                 <span>•</span>
                 {/* 러닝타임 */}
                 <span>{changeRuntime(data?.runtime)}</span>
               </div>
-              {/* favorite */}
-              <div>
-                <CircularProgress />
-              </div>
+              {/* overview */}
+              <div>{data?.overview}</div>
             </div>
           </div>
         </div>

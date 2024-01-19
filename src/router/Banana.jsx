@@ -44,9 +44,9 @@ export default function Banana() {
           {/* 아이템 */}
 
           {lists?.results?.map((list) => (
-            <>
-              {true ? (
-                <Skeleton width="180px" height="300px" rounded="xl"></Skeleton>
+            <React.Fragment key={list.id}>
+              {isLoading ? (
+                <Skeleton width="180px" height="300px" rounded="xl" />
               ) : (
                 <div
                   key={list.id}
@@ -54,7 +54,7 @@ export default function Banana() {
                 >
                   {/* 그림 */}
                   <Link to={`/detail/${list.id}`} key={list.id}>
-                    <div className=" w-full h-[240px] bg-blue-300">
+                    <div className="w-full h-[240px] bg-blue-300">
                       <img
                         className="w-full h-full object-cover"
                         src={`https://image.tmdb.org/t/p/w500${list.poster_path}`}
@@ -77,7 +77,7 @@ export default function Banana() {
                   </Link>
                 </div>
               )}
-            </>
+            </React.Fragment>
           ))}
         </div>
         {/* 페이지 네이션 */}
