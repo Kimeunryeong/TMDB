@@ -5,6 +5,8 @@ import Grape from "./router/Grape";
 import NotFound from "./router/NotFound";
 import Detail from "./router/Detail";
 
+import Search from "./router/Search";
+
 
 const router = createBrowserRouter([
   {
@@ -26,7 +28,10 @@ const router = createBrowserRouter([
   {
     path:"/detail/:id",
     element: <Detail />
-  }
+  },
+  {
+    path:"/search/",
+    element:<Search/>  }
 
 ]);
 
