@@ -51,7 +51,7 @@ export default function Detail() {
               </div>
             </div>
             {/* 오른쪽 설명 */}
-            <div className="w-3/4 h-full flex flex-col justify-center text-white p-10 space-y-4 bg-slate-400">
+            <div className="w-3/4 h-full flex flex-col justify-center text-white p-10 space-y-4 ">
               {/* 제목 */}
               <div className="flex space-x-2">
                 <h1 className="font-bold text-3xl">{data?.title}</h1>

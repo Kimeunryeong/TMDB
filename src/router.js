@@ -7,11 +7,10 @@ import Detail from "./router/Detail";
 
 import Search from "./router/Search";
 import Chakra from "./router/Chakra";
+import Muitest from "./router/Muitest";
 
 const router = createBrowserRouter([
-  {
-    path: "",
-    element: <Outlet />,
+  {path: "",element: <Outlet />,
     errorElement: <NotFound />,
     children: [{ path: "/", element: <App /> }],
   },
@@ -27,11 +26,9 @@ const router = createBrowserRouter([
     path: "/detail/:id",
     element: <Detail />,
   },
-  {
-    path: "/search/",
-    element: <Search />,
-  },
+  { path: "/search/", element: <Search /> },
   { path: "/chakra", element: <Chakra /> },
+  { path: "/mui", element: <Muitest /> },
 ]);
 
 export default router;
