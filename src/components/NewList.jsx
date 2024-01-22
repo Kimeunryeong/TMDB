@@ -55,7 +55,7 @@ export default function NewList() {
                   />
                 </div>
                 <div className="w-[165px] mt-2 relative">
-                  <div className="font-bold">{list?.name}</div>
+                  <div>{list?.name}</div>
                   <div>{list?.first_air_date}</div>
                   <div className="absolute -top-10">
                     <CircularProgress

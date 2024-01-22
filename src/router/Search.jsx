@@ -1,14 +1,15 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Layout from "../components/Layout";
 import { useLocation } from "react-router-dom";
 import { FaSearch } from "react-icons/fa";
 import { MdCancel } from "react-icons/md";
 
 export default function Search() {
-  // const [data, setData] = useState();
+  const [data, setData] = useState();
   const location = useLocation();
   const search = new URLSearchParams(location.search);
   const keyword = search.get("keyword");
+  //   console.log(keyword)
   useEffect(() => {
     const url = `https://api.themoviedb.org/3/search/movie?query=${keyword}&include_adult=false&language=en-US&page=1`;
     const options = {
@@ -23,7 +24,7 @@ export default function Search() {
     fetch(url, options)
       .then((res) => res.json())
       .then((json) => {
-        // setData(json);
+        setData(json);
         console.log(json);
       })
       .catch((err) => console.error("error:" + err));
