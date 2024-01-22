@@ -7,7 +7,7 @@ export default function Item({list}){
               <div className="w-full h-[250px] bg-blue-500">
                 <img 
                 className="w-full h-full object-cover" 
-                src={`https://image.tmdb.org/t/p/w500${list.poster_path||list.backdrop_path}`} 
+                src={`https://image.tmdb.org/t/p/w500${list.poster_path}`} 
                 alt="movieList" />
               </div>
               {/* 아래: 내용 */}
