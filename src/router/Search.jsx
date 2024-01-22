@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Layout from "../components/Layout";
 import { useLocation } from "react-router-dom";
 import { FaSearch } from "react-icons/fa";
