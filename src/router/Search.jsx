@@ -23,7 +23,7 @@ export default function Search() {
     fetch(url, options)
       .then((res) => res.json())
       .then((json) => {
-        setData(json);
+        // setData(json);
         console.log(json);
       })
       .catch((err) => console.error("error:" + err));
