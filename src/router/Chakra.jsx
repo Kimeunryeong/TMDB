@@ -1,7 +1,6 @@
 import React, { useRef } from "react";
 import Layout from "../components/Layout";
 import {
-  Box,
   Button,
   Checkbox,
   Drawer,
@@ -14,7 +13,6 @@ import {
   Input,
   Skeleton,
   SkeletonCircle,
-  SkeletonText,
   Spinner,
   useColorMode,
   useDisclosure,

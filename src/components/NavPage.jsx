@@ -1,7 +1,7 @@
 import { useColorMode } from "@chakra-ui/react";
 import Logo from "../assets/logo.png";
 import { BiPlusMedical } from "react-icons/bi";
-import { FaBell, FaSearch } from "react-icons/fa";
+import { FaSearch } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { MdDarkMode, MdLightMode } from "react-icons/md";
 
@@ -43,7 +43,7 @@ export default function NavPage() {
           </div>
           {/* 벨 아이콘 */}
           <div className="text-white cursor-pointer" onClick={toggleColorMode}>
-            {colorMode == "light" ? <MdDarkMode /> : <MdLightMode />}
+            {colorMode === "light" ? <MdDarkMode /> : <MdLightMode />}
             
             
           </div>
